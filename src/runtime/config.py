@@ -26,47 +26,16 @@ USER_AGENT = (
 # 现的那条；这避免 Summarizer 内部按 name 索引 client 字典时被后写覆盖。
 MODEL_PROVIDERS: list[dict] = [
     {
-        "name": "modelscope",
-        "api_key_env": "DASHSCOPE_API_KEY",
-        "base_url_env": "DASHSCOPE_BASE_URL",
-        "default_base_url": "https://api-inference.modelscope.cn/v1/",
+        "name": "zhipu",
+        "api_key_env": "ZHIPU_API_KEY",
+        "base_url_env": "ZHIPU_BASE_URL",
+        "default_base_url": "https://open.bigmodel.cn/api/paas/v4",
         "models": [
-            "deepseek-ai/DeepSeek-V4-Pro",
-            "deepseek-ai/DeepSeek-V4-Flash"
+            "glm-4-flash",
         ],
     },
-    {
-        "name": "deepseek",
-        "api_key_env": "DEEPSEEK_API_KEY",
-        "base_url_env": "DEEPSEEK_BASE_URL",
-        "default_base_url": "https://api.deepseek.com/v1",
-        "models": [
-            "deepseek-v4-flash"
-        ],
-    },
-    # {
-    #     "name": "modelscope",
-    #     "api_key_env": "DASHSCOPE_API_KEY",
-    #     "base_url_env": "DASHSCOPE_BASE_URL",
-    #     "default_base_url": "https://api-inference.modelscope.cn/v1/",
-    #     "models": [
-    #         "deepseek-ai/DeepSeek-V3.2",
-    #         "ZhipuAI/GLM-5",
-    #         "MiniMax/MiniMax-M2.5",
-    #         "Qwen/Qwen3.5-397B-A17B",
-    #     ],
-    # },
-    {
-        "name": "gemini",
-        "api_key_env": "GEMINI_API_KEY",
-        "base_url_env": "GEMINI_BASE_URL",
-        "default_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
-        "models": [
-            "gemini-2.5-flash",
-            "gemini-3-flash-preview",
-        ],
-    }
 ]
+
 
 
 def resolve_model_providers() -> list[dict]:
